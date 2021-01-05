@@ -53,7 +53,8 @@ int main()
 	{
 		if (f2.fetchObject(i)->getCountry() == "Америка")
 		{
-			f2.deleteObject(i);
+			Cartoon* del=f2.deleteObject(i);
+			cout << del->toString() << " IS DELETED" << endl;
 			i--;
 		}
 	}
