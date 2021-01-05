@@ -24,12 +24,12 @@ int main()
 	File f2;
 	f2.openFileStream("bin.bin");
 	setlocale(LC_ALL, "Russian");
-	Cartoon* mickey = new Cartoon("Америка", "Микки Маус", 50, 7.9, 1954);
-	Cartoon* tom = new Cartoon("Америка", "Том и Джерри", 120, 8.4, 1938);
-	Cartoon* scooby = new Cartoon("Америка", "Скуби-Ду", 30, 8.0, 1994);
-	Cartoon* nu = new Cartoon("СССР", "Ну, погоди!", 80, 10.0, 1980);
-	Cartoon* ivan = new Cartoon("Россия", "Иван Царевич и серый волк", 1, 5.2, 2014);
-	Cartoon* maugli = new Cartoon("Америка", "Маугли", 55, 7.4, 1976);
+	Cartoon* mickey = new Cartoon("ГЂГ¬ГҐГ°ГЁГЄГ ", "ГЊГЁГЄГЄГЁ ГЊГ ГіГ±", 50, 7.9, 1954);
+	Cartoon* tom = new Cartoon("ГЂГ¬ГҐГ°ГЁГЄГ ", "Г’Г®Г¬ ГЁ Г„Г¦ГҐГ°Г°ГЁ", 120, 8.4, 1938);
+	Cartoon* scooby = new Cartoon("ГЂГ¬ГҐГ°ГЁГЄГ ", "Г‘ГЄГіГЎГЁ-Г„Гі", 30, 8.0, 1994);
+	Cartoon* nu = new Cartoon("Г‘Г‘Г‘Гђ", "ГЌГі, ГЇГ®ГЈГ®Г¤ГЁ!", 80, 10.0, 1980);
+	Cartoon* ivan = new Cartoon("ГђГ®Г±Г±ГЁГї", "Г€ГўГ Г­ Г–Г Г°ГҐГўГЁГ· ГЁ Г±ГҐГ°Г»Г© ГўГ®Г«ГЄ", 1, 5.2, 2014);
+	Cartoon* maugli = new Cartoon("ГЂГ¬ГҐГ°ГЁГЄГ ", "ГЊГ ГіГЈГ«ГЁ", 55, 7.4, 1976);
 	f2.putObject(mickey);
 	f2.putObject(tom);
 	f2.putObject(scooby);
@@ -47,6 +47,16 @@ int main()
 	f2.printObject();
 
 	f2.SortedList();
+	f2.printObject();
+	
+	for (int i = 0; i < f2.getLength(); i++)
+	{
+		if (f2.fetchObject(i)->getCountry() == "РђРјРµСЂРёРєР°")
+		{
+			f2.deleteObject(i);
+			i--;
+		}
+	}
 	f2.printObject();
 	
 	f2.close();
